@@ -1,0 +1,457 @@
+/*Обнуление*/
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	font-family: "Comfortaa", cursive;
+}
+/*Стили для демонстрации*/
+
+/* Основные стили */
+
+.container {
+	max-width: 1180px;
+	margin: 0px auto;
+	padding: 0px 10px;
+}
+
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+}
+.header:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #272627;
+	z-index: 2;
+}
+
+.header__body {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 85px;
+	align-items: center;
+}
+.header__logo {
+	flex: 0 0 100px;
+	border-radius: 40%;
+	border-style: outset;
+	border-color: #3f3f3f;
+	border-width: 4px;
+	overflow: hidden;
+	position: relative;
+	z-index: 51;
+}
+.header__logo img {
+	max-width: 100%;
+	display: block;
+}
+.header__logo:hover {
+	flex: 0 0 104px;
+	border-style: none;
+	border-width: none;
+	transition: all 0.5s ease 0s;
+}
+.header__logo:active {
+	flex: 0 0 100px;
+	border-color: #fff;
+	border-style: ridge;
+	border-width: 4px;
+	transition: all 0.3s ease 0s;
+}
+
+.header__burger {
+	display: none;
+}
+
+.header__list {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	text-align: center;
+	align-items: center;
+	gap: 0px;
+	z-index: 2;
+}
+.header__list li {
+	flex: 1 1 140px;
+	list-style: none;
+	margin: 0px 0px 0px 20px;
+}
+.header__link {
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	transition: background-size 0.55s;
+}
+.header__link:hover {
+	background-size: 100% 2px;
+}
+
+.header__language-icon{
+	border-radius: 80%;
+	border: #fff 2px solid;
+	width: 35px;
+	padding: 1px;
+}
+
+@media (max-width: 767px) {
+	body.lock {
+		overflow: hidden;
+	}
+	.header__body {
+		height: 50px;
+	}
+	.header__logo,
+	.header__logo:active {
+		flex: 0 0 40px;
+	}
+	.header__logo:hover {
+		flex: 0 0 44px;
+	}
+	.header__burger {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 3;
+	}
+	.header__burger span {
+		position: absolute;
+		background-color: #fff;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+		transition: all 0.3s ease 0s;
+	}
+	.header__burger:before,
+	.header__burger:after {
+		content: "";
+		background-color: #fff;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+		transition: all 0.3s ease 0s;
+	}
+	.header__burger:before {
+		top: 0;
+	}
+	.header__burger:after {
+		bottom: 0;
+	}
+
+	.header__burger.active span {
+		transform: scale(0);
+	}
+
+	.header__burger.active:before {
+		transform: rotate(45deg);
+		top: 9px;
+	}
+	.header__burger.active:after {
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+
+	.header__menu {
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		transition: all 0.3s ease 0s;
+		background-color: #272727;
+		padding: 70px 10px 20px 10px;
+	}
+
+	.header__menu.active {
+		top: 0;
+	}
+
+	.header__list {
+		display: block;
+	}
+	.header__list li {
+		margin: 0px 0px 20px 0px;
+	}
+	.header__link {
+		font-size: 24px;
+	}
+}
+
+.content {
+	padding: 100px 0px 50px 0px;
+	background-image: url("img/Cover_index.jpg");
+	background-size: cover;
+}
+.content__title {
+	font-weight: 800;
+	font-size: 60px;
+	padding: 100px 0px 100px 20px;
+}
+.content__row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.content__image img {
+	width: 400px;
+	box-shadow: 20px 20px 10px #888888;
+}
+.content__text {
+	font-size: 18px;
+	line-height: 25px;
+}
+.content__text p {
+	margin: 20px 0px 20px 0px;
+	text-indent: 30px;
+}
+.glory {
+	text-indent: 50px;
+	font-weight: 700;
+}
+@media (max-width: 767px) {
+	.content {
+		padding: 70px 0px 0px 0px;
+	}
+	.content__title {
+		padding: 50px 0px 40px 20px;
+	}
+}
+iframe {
+	border: 10px solid #272727;
+	padding: 0.5rem;
+	box-shadow: 20px 20px 10px #888888;
+	width: 100%;
+	height: 80vh;
+	
+}
+
+.footer {
+	height: 180px;
+	padding: 30px;
+}
+.footer_cont {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.icons {
+	margin: 10px 0px 0px 0px;
+}
+.footer__text {
+	font-size: 25px;
+	font-weight: 700;
+	text-align: center;
+	display: flex;
+}
+
+/*Додаткові стилі в Контактах*/
+.phone img {
+	width: 120px;
+	margin-left: -40px;
+}
+.email img,
+.insta img,
+.faceb img,
+.icons img{
+	width: 35px;
+}
+.content__inform {
+	display: flex;
+	flex-direction: column;
+	padding: 50px 50px 50px 60px;
+}
+.content__inform-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.content__inform-text {
+	margin-left: 20px;
+	font-size: 20px;
+}
+
+/*Додаткові стилі в Про мене*/
+.content__inform p {
+	line-height: 25px;
+	font-size: 18px;
+}
+.aboutme {
+	padding-bottom: 30px;
+}
+.certificate__title {
+	font-size: 25px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.certificate__photo-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items:center;
+}
+.certificate__photo img {
+	border: 10px solid #272727;
+	padding: 0.5rem;
+	box-shadow: 20px 20px 10px #888888;
+	width: 100%;
+}
+.certificate__photo {
+	min-width: 200px;
+	max-width: 500px;
+}
+/*Додаткові стилі в Фотогалерея*/
+/* 3D Slideshow */ 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#slideshow {
+	margin: 0 auto;
+	padding-top: 0px;
+	height: 600px;
+	width: 100%;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+.slideshow-title {
+	font-family: 'Allerta Stencil';
+	font-size: 62px;
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20%;
+	letter-spacing: 3px;
+	font-weight: 300;
+}
+
+.sub-heading {
+	padding-top: 50px;
+	font-size: 18px;
+} .sub-heading-two {
+	font-size: 15px;
+} .sub-heading-three {
+	font-size: 13px;
+} .sub-heading-four {
+	font-size: 11px;
+} .sub-heading-five {
+	font-size: 9px;
+} .sub-heading-six {
+	font-size: 7px;
+} .sub-heading-seven {
+	font-size: 5px;
+} .sub-heading-eight {
+	font-size: 3px;
+} .sub-heading-nine {
+	font-size: 1px;
+}
+
+.entire-content {
+	margin: auto;
+	width: 200px;
+	perspective: 1000px;
+	position: relative;
+	padding-top: 80px;
+}
+
+.content-carrousel {
+	width: 100%;
+	position: absolute;
+	float: right;
+	animation: rotar 25s infinite linear;
+	transform-style: preserve-3d;
+}
+
+.content-carrousel:hover {
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
+.content-carrousel figure {
+	width: 100%;
+	height: 330px;
+	border: 1px solid #3b444b;
+	overflow: hidden;
+	position: absolute;
+}
+
+.content-carrousel figure:nth-child(1) {
+	transform: rotateY(0deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(2) {
+	transform: rotateY(40deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(3) {
+	transform: rotateY(80deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(4) {
+	transform: rotateY(120deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(5) {
+	transform: rotateY(160deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(6) {
+	transform: rotateY(200deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(7) {
+	transform: rotateY(240deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(8) {
+	transform: rotateY(280deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(9) {
+	transform: rotateY(320deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(10) {
+	transform: rotateY(360deg) translateZ(300px); 
+} 
+
+.shadow {
+    position: absolute;
+    box-shadow: 0px 0px 20px 0px #000;
+    border-radius: 1px;
+}
+
+.content-carrousel img {
+	image-rendering: auto;
+	transition: all 300ms;
+	width: 100%;
+	height: 100%;
+}
+
+.content-carrousel img:hover {
+	transform: scale(1.2);
+	transition: all 300ms;
+}
+
+@keyframes rotar {
+	from {
+		transform: rotateY(0deg);
+	} to {
+		transform: rotateY(360deg);
+	}
+}
