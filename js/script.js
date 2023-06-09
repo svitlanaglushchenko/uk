@@ -1,4 +1,4 @@
-"use strict"
+
 // Випадаюче меню
 let isMobile = {
    Android: function () { return navigator.userAgent.match(/Android/i); },
@@ -26,6 +26,8 @@ if (isMobile.any()) {
 } else {
    body.classList.add('mouse');
 };
+
+"use strict"
 // Ініціалізація Swiper
 new Swiper('.image-slider', {
    // Стрілки
