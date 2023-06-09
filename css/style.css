@@ -295,7 +295,7 @@ body.touch .arrow {
    }
    .header__arrow {
       top: 10px;
-      right: 25%;
+      right: 15%;
       z-index: 15;
    }
    .artphoto__item-description {
