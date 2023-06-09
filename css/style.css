@@ -629,7 +629,7 @@ body.touch .arrow {
 }
 
 .full-screen__body {
-   background-color: rgba(0, 0, 0, 0.75);
+   background-color: rgba(0, 0, 0, 0.6);
    position: relative;
    z-index: 2;
    display: flex;
