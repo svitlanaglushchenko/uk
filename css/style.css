@@ -629,7 +629,7 @@ body.touch .arrow {
 }
 
 .full-screen__body {
-   background-color: rgba(0, 0, 0, 0.6);
+   background-color: rgba(0, 0, 0, 0.4);
    position: relative;
    z-index: 2;
    display: flex;
@@ -641,10 +641,10 @@ body.touch .arrow {
    overflow: hidden;
 }
 .full-screen__body-tematich {
-   background-color: rgba(0, 0, 0, 0.45);
+   background-color: rgba(0, 0, 0, 0.35);
 }
 .full-screen__body-babyborn {
-   background-color: rgba(0, 0, 0, 0.3);
+   background-color: rgba(0, 0, 0, 0.2);
 }
 
 .full-screen__title {
